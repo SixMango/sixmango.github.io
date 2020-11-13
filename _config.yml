@@ -106,3 +106,8 @@ deploy:
   type: git
   repo: git@github.com:SixMango/sixmango.github.io.git
   branch: main
+
+search:
+  path: search.xml
+  field: post
+  content: true
