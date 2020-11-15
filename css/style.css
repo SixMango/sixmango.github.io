@@ -1349,19 +1349,20 @@ article .content .caption {
   color: #383838;
 }
 .search-input {
+  margin-top: 15px;
   padding: 4px 7px;
   width: 100%;
   outline: none;
-  border: solid 1px #8c8c8c;
-  border-radius: 5px;
+  border: solid 2px #8c8c8c;
+  border-radius: 7px;
   background-color: #fff;
   color: #383838;
   font-size: 1.2rem;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
 }
 .search-input:focus {
-  border: solid 1px #2bbc8a;
+  border: solid 2px #2bbc8a;
 }
 #search-result ul.search-result-list {
   padding: 0;
