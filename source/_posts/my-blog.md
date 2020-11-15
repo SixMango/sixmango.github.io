@@ -1,10 +1,11 @@
 ---
+layout: post
 title: 第一个博客
 date: 2020-11-10 23:29:53
 tags:
-- 零
+- zero
 categories: 
-- 生活
+- live
 ---
 
 ## 收获

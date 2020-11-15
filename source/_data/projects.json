@@ -2,11 +2,11 @@
     {
        "name":"Hexo",
        "url":"https://hexo.io/",
-       "desc":"A fast, simple & powerful blog framework"
+       "desc":"快速、简洁且高效的博客框架"
     },
     {
-       "name":"Font Awesome",
-       "url":"http://fontawesome.io/",
-       "desc":"The iconic font and CSS toolkit"
+       "name":"如优图床",
+       "url":"https://img.rruu.net/",
+       "desc":"最好用的免费图床（用户名：sixmango）"
     }
 ]

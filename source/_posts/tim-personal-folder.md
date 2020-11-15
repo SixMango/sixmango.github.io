@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 🥭TIM个人文件夹设置🥭
+title: TIM个人文件夹设置
 date: 2020-11-15 14:13:44
 tags:
-- TIM
-- 强迫症
+- tim
+- zero5
 categories: 
-- 生活
+- live
 ---
 
 QQ轻聊版、TIM版有个BUG：
