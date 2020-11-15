@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
     <!-- so meta -->
     <meta charset="utf-8">
@@ -12,11 +12,11 @@
 <meta property="og:url" content="https://sixmango.github.io/2020/11/10/my-blog/index.html">
 <meta property="og:site_name" content="六芒果">
 <meta property="og:description" content="收获 记载通过卢克的视频学习到的东西，视频链接https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1dt4y1Q7UE   hexo博客搭建 github静态网站部署 通过github的Action自动部署项目  介绍   相关说明\名称 Hexo VuePress Gatsby    难易度 1 2 3   技术栈 ejs&#x2F;stylus vue&#x2F;stylus react&#x2F;graph">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-10T15:29:53.000Z">
-<meta property="article:modified_time" content="2020-11-15T07:51:25.794Z">
+<meta property="article:modified_time" content="2020-11-15T12:16:19.710Z">
 <meta property="article:author" content="mango">
-<meta property="article:tag" content="零">
+<meta property="article:tag" content="zero">
 <meta name="twitter:card" content="summary">
     
     
@@ -63,13 +63,13 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/categories/">分类</a></li>
+          <li><a href="/categories/">Category</a></li>
          
-          <li><a href="/tags/">标签</a></li>
+          <li><a href="/tags/">Tag</a></li>
          
-          <li><a href="/search/">搜索</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </span>
@@ -83,25 +83,17 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://sixmango.github.io/2020/11/10/my-blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://sixmango.github.io/2020/11/10/my-blog/&text=第一个博客"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sixmango.github.io/2020/11/10/my-blog/&is_video=false&description=第一个博客"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sixmango.github.io/2020/11/10/my-blog/"><i class="fab fa-qq " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://sixmango.github.io/2020/11/10/my-blog/&text=第一个博客"><i class="fab fa-weibo " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="mailto:?subject=第一个博客&body=Check out this article: https://sixmango.github.io/2020/11/10/my-blog/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://sixmango.github.io/2020/11/10/my-blog/&name=第一个博客&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://sixmango.github.io/2020/11/10/my-blog/&t=第一个博客"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -139,14 +131,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+        <a class="category-link" href="/categories/live/">live</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E9%9B%B6/" rel="tag">零</a>
+        <a class="tag-link-link" href="/tags/zero/" rel="tag">zero</a>
     </div>
 
 
@@ -256,9 +248,6 @@
 <h2 id="在线编辑"><a href="#在线编辑" class="headerlink" title="在线编辑"></a>在线编辑</h2><p>通过修改ejs的模板加一个编辑的超链接<br>ps：利用github自己的编辑功能</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;你的项目编辑页面链接不要后缀&lt;%- page.source %&gt;&quot;</span>&gt;</span>编辑/a&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
   </div>
-  <div>
-    <a href="https://github.com/SixMango/sixmango.github.io/edit/blog/source/_posts/my-blog.md" target="_blank">编辑</a>
-  </div>
 </article>
 
 
@@ -270,13 +259,13 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/categories/">分类</a></li>
+          <li><a href="/categories/">Category</a></li>
          
-          <li><a href="/tags/">标签</a></li>
+          <li><a href="/tags/">Tag</a></li>
          
-          <li><a href="/search/">搜索</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </div>
@@ -287,26 +276,18 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://sixmango.github.io/2020/11/10/my-blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://sixmango.github.io/2020/11/10/my-blog/&text=第一个博客"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sixmango.github.io/2020/11/10/my-blog/&is_video=false&description=第一个博客"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sixmango.github.io/2020/11/10/my-blog/"><i class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://sixmango.github.io/2020/11/10/my-blog/&text=第一个博客"><i class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="mailto:?subject=第一个博客&body=Check out this article: https://sixmango.github.io/2020/11/10/my-blog/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://sixmango.github.io/2020/11/10/my-blog/&title=第一个博客"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://sixmango.github.io/2020/11/10/my-blog/&name=第一个博客&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://sixmango.github.io/2020/11/10/my-blog/&t=第一个博客"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -314,28 +295,28 @@
 
         
         <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+  <div class="footer-top">
     
     
-    2016-2020
-    mango
+    <i class="fas fa-palette"></i> cactus&nbsp&nbsp
+    <i class="fas fa-feather-alt"></i> mango&nbsp&nbsp
+    <i class="fas fa-copyright"></i> 2020
   </div>
-  <div class="footer-right">
+  <!-- <div class="footer-right">
     <nav>
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/categories/">分类</a></li>
+          <li><a href="/categories/">Category</a></li>
          
-          <li><a href="/tags/">标签</a></li>
+          <li><a href="/tags/">Tag</a></li>
          
-          <li><a href="/search/">搜索</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </nav>
-  </div>
+  </div> -->
 </footer>
 
     </div>
@@ -362,7 +343,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -373,7 +354,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })

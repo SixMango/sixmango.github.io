@@ -132,7 +132,7 @@ var searchFunc = function(path, searchId, contentId) {
               // highlight all keywords
               var regS = new RegExp(keywords.join("|"), "gi");
               matchContent = matchContent.replace(regS, function(keyword) {
-                return "<em class=\"search-keyword\">"+keyword+"</em>";
+                return "<span class=\"search-keyword\">"+keyword+"</span>";
               });
 
               searchResult.str += "<p class=\"search-result\">" + matchContent +"...</p>";
