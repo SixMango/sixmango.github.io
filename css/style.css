@@ -690,6 +690,7 @@ body {
   }
   #header #nav ul a {
     margin-right: 0;
+    display: block;
   }
   #header #nav ul a:hover {
     background: none;
@@ -1364,6 +1365,7 @@ article .content .caption {
   font-size: 1.2rem;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
+  -webkit-appearance: none;
 }
 .search-input:focus {
   border: solid 2px #2bbc8a;
