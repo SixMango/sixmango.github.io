@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 六芒果
+title: '六芒果'
 subtitle: ''
 description: '🥭🍓🍉🍊🍋🍍🍎🥝🍇'
 keywords: ['博客','blog']
@@ -107,16 +107,11 @@ deploy:
   repo: git@github.com:SixMango/sixmango.github.io.git
   branch: main
 
-#Search
-search:
-  path: search.xml
-  field: post
-  content: true
-
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:
   enable: true
+  debug: false
   model:
     use: ./source/live2d/wanko
   display:

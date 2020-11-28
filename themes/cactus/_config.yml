@@ -55,12 +55,12 @@ archive:
 # Options:
 #   - show_updated: show the last modification date.
 post:
-  show_updated: false
+  show_updated: true
 
 # Customize the copyright years
 # Note: if start_year/end_year not provided, will use current year.
 copyright:
-  start_year: 2016
+  start_year: 2020
   end_year:
 
 ##############################################################################
@@ -135,30 +135,29 @@ open_graph:
 # Plugins
 ##############################################################################
 
-# Fill in your Disqus Comments Shortname to enable Disqus comments.
-disqus:
-  enabled: false
-  shortname: cactus-1
-
-# Fill in your Google Analytics tracking ID to enable Google Analytics.
-google_analytics:
-  enabled: false
-  id: UA-86660611-1
-
-# Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
-baidu_analytics:
-  enabled: false
-  id: 2e6da3c375c8a87f5b664cea6d4cb29c
-
-# Fill in your Umami Analytics tracking ID to enable Umami Analytics.
-umami_analytics:
-  enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
-  host: https://analytics.domain.com
-
 # Fill in you Gravatar email or hash if you want to use your gravatar as the
 # logo and/or favicons of you website.
 # To generate hash: `$ echo -n "name@email.com" | md5`.
 gravatar:
   email: name@email.com
   hash: d41d8cd98f00b204e9800998ecf8427e
+
+#Search
+search:
+  path: search.xml
+  field: post
+  content: true
+
+# Valine
+## https://valine.js.org/configuration.html
+valine:
+  enable: true
+  app_id:  BTQaUfQacLshJFVyJ7Fhq4TJ-gzGzoHsz
+  app_key: TfOuzWb1I4K5P8pqbDVKBx5s
+  lang: zh-cn
+  avatar: monsterid
+  placeholder: 昵称可以输入QQ哦ヾﾉ≧∀≦)o ~
+  page_size: 10
+  enable_qq: true
+
+
