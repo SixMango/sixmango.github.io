@@ -1277,6 +1277,12 @@ article .content .caption {
 .blog-post-comments {
   margin-top: 4rem;
 }
+.blog-post-comments .valine_thread .vwrap .vinput {
+  font-size: 14px;
+}
+.blog-post-comments .valine_thread .vwrap .veditor {
+  font-family: 'Fira Code', sans-serif, monospace;
+}
 #footer {
   position: absolute;
   bottom: 0;

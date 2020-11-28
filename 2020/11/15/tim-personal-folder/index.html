@@ -14,7 +14,7 @@
 <meta property="og:description" content="QQ轻聊版、TIM版有个BUG： 如果电脑上之前没有安装过QQ完整版（比如我新装的虚拟机），那么QQ轻聊版、TIM版里面，设置修改个人文件夹位置将无法生效。在QQ轻聊版、TIM版设置界面修改个人文件夹位置后，会提示转移数据文件，之后会重启轻聊版&#x2F;TIM，但重启后的登录界面上没有之前登录过的QQ号，重新输入QQ号和密码登录后，查看配置界面，发现个人文件夹位置还是修改之前的默认路径（通常是在我的文档下">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-15T06:13:44.000Z">
-<meta property="article:modified_time" content="2020-11-28T06:20:38.787Z">
+<meta property="article:modified_time" content="2020-11-28T17:41:55.627Z">
 <meta property="article:author" content="mango">
 <meta property="article:tag" content="tim">
 <meta name="twitter:card" content="summary">
@@ -42,12 +42,6 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
-    
-      
-<link rel="stylesheet" href="/css/rtl.css">
-
-    
     <!-- rss -->
     
     
@@ -124,6 +118,8 @@
       
         <time datetime="2020-11-15T06:13:44.000Z" itemprop="datePublished">2020-11-15</time>
         
+        (Updated: <time datetime="2020-11-28T17:41:55.627Z" itemprop="dateModified">2020-11-29</time>)
+        
       
     </div>
 
@@ -165,6 +161,12 @@
 
   </div>
 </article>
+
+    <div class="blog-post-comments">
+        <section id="comment">
+            <div id="valine_container" class="valine_thread"></div>
+        </section>
+    </div>
 
 
 
@@ -238,42 +240,50 @@
 
 <!-- clipboard -->
 
-  
+
 <script src="/lib/clipboard/clipboard.min.js"></script>
 
-  <script type="text/javascript">
-  $(function() {
+<script type="text/javascript">
+  $(function () {
     // copy-btn HTML
     var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
+    btn += '</span>';
     // mount it!
     $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      text: function (trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str, it) => str + it
+          .innerText + '\n', '')
       }
     });
-    clip.on('success', function(e) {
+    clip.on('success', function (e) {
       e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })
-  </script>
+</script>
 
 
 <script src="/js/main.js"></script>
 
 <!-- search -->
 
-<!-- Google Analytics -->
+<!-- valine comments -->
 
-<!-- Baidu Analytics -->
+<script src='//unpkg.com/valine@1.4.14/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#valine_container',
+    appId: 'BTQaUfQacLshJFVyJ7Fhq4TJ-gzGzoHsz',
+    appKey: 'TfOuzWb1I4K5P8pqbDVKBx5s',
+    placeholder: "昵称可以输入QQ哦ヾﾉ≧∀≦)o ~",
+    pageSize: '10',
+    avatar: 'monsterid',
+    lang: 'zh-cn',
+    enableQQ: 'true'
+  })
+</script>
 
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150,"hOffset":-10,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.85},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150,"hOffset":-10,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.85},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
