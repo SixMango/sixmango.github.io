@@ -1108,9 +1108,6 @@ body {
 #about a {
   color: #383838;
 }
-#about .site_uv {
-  display: none;
-}
 #about .site_uv:after {
   content: '|';
   font-weight: 500;
@@ -1245,9 +1242,6 @@ article .content .caption {
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
-}
-.post_pv .site_pv {
-  display: none;
 }
 @media (min-width: 480px) {
   .article-tag,
