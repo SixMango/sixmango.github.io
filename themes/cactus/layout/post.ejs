@@ -8,10 +8,8 @@
       <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
       <% if (theme.busuanzi.enable) { %>
         <div class = "post_pv">
-          <span id = "busuanzi_container_site_pv" class = "site_pv">
-            <i class="fa fa-eye"></i>
-            <span id = "busuanzi_value_site_pv"></span>
-          </span>
+          <i class="fa fa-eye"></i>
+          <span id = "busuanzi_value_site_pv">-</span>
         </div>
       <% } %>
       <%- partial('_partial/post/category') %>
