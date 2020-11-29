@@ -2,10 +2,18 @@
   <header>
     <%- partial('_partial/post/title', { post: page, index: false, class_name: 'posttitle' }) %>
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <!-- <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
-      </span>
+      </span> -->
       <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
+      <% if (theme.busuanzi.enable) { %>
+        <div class = "post_pv">
+          <span id = "busuanzi_container_site_pv" class = "site_pv">
+            <i class="fa fa-eye"></i>
+            <span id = "busuanzi_value_site_pv"></span>
+          </span>
+        </div>
+      <% } %>
       <%- partial('_partial/post/category') %>
       <%- partial('_partial/post/tag') %>
     </div>

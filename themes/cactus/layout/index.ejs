@@ -4,6 +4,12 @@
   <% } %>
   <% if (theme.social_links) { %>
     <p>
+      <% if (theme.busuanzi.enable) { %>
+        <span id = "busuanzi_container_site_uv" class = "site_uv">
+          <i class="fa fa-eye"></i>
+          <span id = "busuanzi_value_site_uv"></span>
+        </span>
+      <% } %>
       <%= __('index.find_me_on') %>
       <% var nb_links = Object.keys(theme.social_links).length %>
       <% var i = 0 %>

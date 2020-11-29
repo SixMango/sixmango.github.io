@@ -142,7 +142,7 @@ gravatar:
   email: name@email.com
   hash: d41d8cd98f00b204e9800998ecf8427e
 
-#Search
+# Search
 search:
   path: search.xml
   field: post
@@ -159,5 +159,11 @@ valine:
   placeholder: 昵称可以输入QQ哦ヾﾉ≧∀≦)o ~
   page_size: 10
   enable_qq: true
+
+# Busuanzi
+## http://busuanzi.ibruce.info/
+## The number of local tests is very large
+busuanzi:
+  enable: true
 
 

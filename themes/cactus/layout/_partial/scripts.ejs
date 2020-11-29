@@ -68,7 +68,7 @@
 </script>
 <% } %>
 <!-- valine comments -->
-<% if (page.comments && theme.valine.enable){ %>
+<% if (page.layout === "post" && theme.valine.enable){ %>
 <script src='//unpkg.com/valine@1.4.14/dist/Valine.min.js'></script>
 <script>
   new Valine({
@@ -82,4 +82,8 @@
     enableQQ: '<%= theme.valine.enable_qq %>'
   })
 </script>
+<% } %>
+<!-- busuanzi -->
+<% if ((page.path === "index.html" | page.layout === "post") && theme.busuanzi.enable){ %>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <% } %>
