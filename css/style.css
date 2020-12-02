@@ -343,9 +343,8 @@ body .h2 {
 }
 body h3 {
   color: #383838;
-  text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 body h4,
 body h5,
@@ -1142,6 +1141,14 @@ article .content h2:before {
   content: "#";
   font-weight: bold;
   font-size: 1.1rem;
+}
+article .content h3:before {
+  position: absolute;
+  left: -1rem;
+  color: #2bbc8a;
+  content: "*";
+  font-weight: bold;
+  font-size: 1rem;
 }
 article .content img,
 article .content video {

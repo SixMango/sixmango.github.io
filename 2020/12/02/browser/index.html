@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="浏览器的构成浏览器简单结构可以分为用户界面、浏览器引擎、渲染引擎（常被称为浏览器内核）。用户界面用于展示除标签页窗口之外的其他用户界面内容。渲染引擎负责渲染用户请求的页面内容。在用户界面和渲染引擎之间有个浏览器引擎，用于在用户界面和渲染引擎之间传递数据。 渲染引擎下面还有很多小的功能模块，比如负责网络请求的网络模块，用于解析和执行js的js解释器，解析HTML用到的XML解析器，用于绘制基本的浏览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器知识随笔">
+<meta property="og:url" content="https://sixmango.github.io/2020/12/02/browser/index.html">
+<meta property="og:site_name" content="六芒果">
+<meta property="og:description" content="浏览器的构成浏览器简单结构可以分为用户界面、浏览器引擎、渲染引擎（常被称为浏览器内核）。用户界面用于展示除标签页窗口之外的其他用户界面内容。渲染引擎负责渲染用户请求的页面内容。在用户界面和渲染引擎之间有个浏览器引擎，用于在用户界面和渲染引擎之间传递数据。 渲染引擎下面还有很多小的功能模块，比如负责网络请求的网络模块，用于解析和执行js的js解释器，解析HTML用到的XML解析器，用于绘制基本的浏览">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U470190e3982246ec89d2e71a06bcfe2ar.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Ud8ecc32ebc9a4ea998ed64236fa3c112K.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Ud5a1b6f3c01741e3b467491039acb867L.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U9f8a9d38dd6e414e9733dbc591a0cad7f.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U7a357d789bbe4db282a07e38b3269c590.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Ucf4a42cc097a4f57b8ebd64e00c163a0W.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U57f4f5da0c634feab8c7e0d29a8df8c5C.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U34b6b8c7c535431fb3eef28c5ecb4bc6W.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U46e15d3968894f44a794eeddb7280201l.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U02cafd088b2246ca8c819922af24aa8d3.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Ued062288b36f42f3b3e4e4385e0c1c5f9.jpg">
+<meta property="article:published_time" content="2020-12-02T14:26:43.000Z">
+<meta property="article:modified_time" content="2020-12-02T15:23:06.599Z">
+<meta property="article:author" content="mango">
+<meta property="article:tag" content="browser">
+<meta property="article:tag" content="chrome">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ae01.alicdn.com/kf/U470190e3982246ec89d2e71a06bcfe2ar.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>浏览器知识随笔</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/tags/">Tag</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/11/15/tim-personal-folder/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sixmango.github.io/2020/12/02/browser/"><i class="fab fa-qq " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://sixmango.github.io/2020/12/02/browser/&text=浏览器知识随笔"><i class="fab fa-weibo " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=浏览器知识随笔&body=Check out this article: https://sixmango.github.io/2020/12/02/browser/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">浏览器的构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8"><span class="toc-number">2.</span> <span class="toc-text">浏览器内核</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome"><span class="toc-number">3.</span> <span class="toc-text">Chrome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA"><span class="toc-number">3.2.</span> <span class="toc-text">导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93"><span class="toc-number">3.3.</span> <span class="toc-text">渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">事件</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        浏览器知识随笔
+    </h1>
+
+
+
+    <div class="meta">
+      <!-- <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">mango</span>
+      </span> -->
+      
+    <div class="postdate">
+      
+        <time datetime="2020-12-02T14:26:43.000Z" itemprop="datePublished">2020-12-02</time>
+        
+        (Updated: <time datetime="2020-12-02T15:23:06.599Z" itemprop="dateModified">2020-12-02</time>)
+        
+      
+    </div>
+
+
+      
+        <div class = "post_pv">
+          <i class="fa fa-eye"></i>
+          <span id = "busuanzi_value_site_pv">-</span>
+        </div>
+      
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/browser/" rel="tag">browser</a>, <a class="tag-link-link" href="/tags/chrome/" rel="tag">chrome</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="浏览器的构成"><a href="#浏览器的构成" class="headerlink" title="浏览器的构成"></a>浏览器的构成</h2><p>浏览器简单结构可以分为用户界面、浏览器引擎、渲染引擎（常被称为浏览器内核）。用户界面用于展示除标签页窗口之外的其他用户界面内容。渲染引擎负责渲染用户请求的页面内容。在用户界面和渲染引擎之间有个浏览器引擎，用于在用户界面和渲染引擎之间传递数据。</p>
+<p>渲染引擎下面还有很多小的功能模块，比如负责网络请求的网络模块，用于解析和执行js的js解释器，解析HTML用到的XML解析器，用于绘制基本的浏览器窗口内控件的UI后端，还有数据存储持久层，帮助浏览器保存各种数据，比如cookie等等。<br><img src="https://ae01.alicdn.com/kf/U470190e3982246ec89d2e71a06bcfe2ar.jpg"></p>
+<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>不同浏览器使用的内核也不近相同，下表做了个总结</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>内核</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>Trident</td>
+<td align="left">IE、猎豹安全、360极速浏览器、百度浏览器</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Gecko</td>
+<td align="left">Mozila自主研发的渲染引擎</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Webkit</td>
+<td align="left">Safari推出时使用的渲染引擎，后来将webkit开源</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>Blink</td>
+<td align="left">Chromium 项目（基于webkit，同时也开源）中研发的新一代渲染引擎</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Blink</td>
+<td align="left">最初使用自主研发的Presto（最后版本12.17），后转用Chromium 项目</td>
+</tr>
+<tr>
+<td>Edge</td>
+<td>Blink</td>
+<td align="left">最初使用自主研发的EdgeHTML，后转用Chromium 项目（2020年四月）</td>
+</tr>
+</tbody></table>
+<h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>Chrome浏览器是一个多进程结构应用，根据服务功能不同可以拆分成浏览器进程（负责与浏览器其他进程协调工作）、网络进程（负责发起接受网络请求）、GPU进程（负责图形渲染）、插件进程（负责控制网站使用的插件，如flash）、缓存进程（负责数据持久化）、渲染进程（负责渲染Tab标签内的内容）等等。默认情况下浏览器会为每个标签页都创建一个进程，因为chrome默认使用的进程模型是Process-per-site-instance，除此之外还有三种模型，详情参考<a target="_blank" rel="noopener" href="https://www.chromium.org/developers/design-documents/process-models%E3%80%82">https://www.chromium.org/developers/design-documents/process-models。</a></p>
+<blockquote>
+<p>进程（Process）是操作系统进行资源分配和调度的基本单元，可以申请和拥有计算机资源，进程是程序的基本执行实体。<br>线程（Thread）是操作系统能够进行运算调度的最小单位，一个进程中可以并发多个线程，每条线程并行执行不同的任务。<br>当启动某个程序时，就会创建一个进程来执行任务代码，同时会为该进程分配内存空间，该应用程序的状态都保存在该内存空间里。当应用关闭时，该内存空间就会被回收。进程可以启动更多的进程来执行任务，由于每个进程分配的内存空间是独立的，如果两个进程间需要传递某些数据，则需要通过进程间通信管道IPC来传递。很多应用程序都是多进程的结构，这样是为了避免某一个进程卡死，由于进程间相互独立，这样不会影响到整个应用程序。</p>
+</blockquote>
+<p>Chrome在不同硬件条件的设备上，会整合一些服务进程到同一进程，以达到更好的表现效果。<br><img src="https://ae01.alicdn.com/kf/Ud8ecc32ebc9a4ea998ed64236fa3c112K.jpg"></p>
+<h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h3><p>导航栏的工作是由浏览器进程控制，浏览器进程又对这些工作进一步划分，使用不同线程进行处理：</p>
+<ul>
+<li>ui thread：控制浏览器上的按钮及输入框</li>
+<li>network thread：处理网络请求，从网上获取数据</li>
+<li>storage thread：控制文件等的访问</li>
+</ul>
+<p>当在浏览器地址栏中输入内容获得页面内容时，浏览器大致可以分为以下几步：</p>
+<ol>
+<li><p>处理输入</p>
+<p>ui thread判断用户输入的是url还是query</p>
+</li>
+<li><p>开始导航</p>
+<p>如果输入的是url，ui thread会启动一个network thread来获取数据。如果输入是query，就会使用默认配置的搜索引擎来查询，同时ui thread控制tab展现spinner表示正在加载中。</p>
+<p>network thread会执行DNS查询，随后为请求建立TLS连接。</p>
+<p>如果network thread接收到了重定向请求头如301，network thread会通知ui thread服务器要求重定向，之后另外一个url请求会被触发。</p>
+</li>
+<li><p>读取响应</p>
+<p>当请求响应返回的时候，network thread会依据Content-Type及MIME Type判断响应内容的格式，如果响应内容的格式是HTML ，会把这些数据传递给renderer process。</p>
+<p>Safe Browsing检查也会在此时触发，如果域名或者请求内容匹配到已知的恶意站点，network thread会展示一个警告页。</p>
+</li>
+<li><p>查找渲染进程</p>
+<p>network thread确认浏览器可以导航到请求网页，network thread会通知ui thread数据已经准备好，ui thread会查找到一个renderer process进行网页的渲染。</p>
+<blockquote>
+<p>ui thread可以在发送url请求给network thread时，并行预先查找和启动一个渲染进程，以提高效率。</p>
+</blockquote>
+</li>
+<li><p>确认导航</p>
+<p>browser process会给renderer process发送IPC消息来确认导航，一旦browser process收到renderer process的渲染确认消息，导航过程结束，页面加载过程开始，此时地址栏会更新，历史也会更新，可通过返回键返回页面。</p>
+<p>直到渲染结束，renderer process会通知browser process，ui thread会停止展示tab中的spinner。</p>
+</li>
+</ol>
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p>渲染进程的核心目的在于转换 HTML CSS JS 为用户可交互的 web 页面。渲染进程中主要包含以下线程:</p>
+<ul>
+<li>主线程 Main thread</li>
+<li>合成器线程 Compositor thread</li>
+<li>栅格线程 Raster thread</li>
+</ul>
+<p><img src="https://ae01.alicdn.com/kf/Ud5a1b6f3c01741e3b467491039acb867L.jpg"></p>
+<p>浏览器渲染过程：</p>
+<ol>
+<li><p>构建 DOM</p>
+<p>主线程对HTML进行Tokeniser标记化，通过词法分析，将输入HTML内容解析成多个标记，根据识别后的标记进行dom tree构造，在dom tree构造过程中会创建document对象，然后以document为根节点的dom tree不断进行修改，向其中添加各种元素。</p>
+<p>渲染html为DOM的方法由HTML Standard定义。</p>
+</li>
+<li><p>加载次级的资源</p>
+<p>网页中常常包含诸如图片，CSS，JS等额外的资源，这些资源需要从网络上或者cache中获取。主进程可以在构建DOM的过程中会逐一请求它们，为了加速preload scanner会同时运行，如果在html中存在img，link等标签，preload scanner会把这些请求传递给browser process中的network thread进行相关资源的下载。</p>
+</li>
+<li><p>JS 的下载与执行</p>
+<p>当遇到script标签时，主线程会停止解析HTML，而去加载，解析和执行JS代码，停止 解析html的原因在于JS可能会改变dom tree（使用诸如 document.write()等API）。</p>
+<p>因此要把script标签放在合适的位置，或者使用async或defer属性来异步加载执行js。</p>
+</li>
+<li><p>样式计算</p>
+<p>仅仅渲染dom tree还不足以获知页面的具体样式，主进程还会基于CSS选择器解析CSS获取每一个节点的最终的计算样式值。即使不提供任何CSS，浏览器对每个元素也会有一个默认的样式。</p>
+</li>
+<li><p>获取布局</p>
+<p>想要渲染一个完整的页面，除了获知每个节点的具体样式，还需要获知每一个节点在页面上的位置，布局是找到所有元素的几何关系的过程。</p>
+<p>通过遍历DOM及相关元素的计算样式，主线程会构建出包含每个元素的坐标信息及盒子大小的layout tree。layout tree和dom tree类似，但是其中只包含页面可见的元素，如果一个元素设置了display:none ，这个元素不会出现在layout tree上，伪元素虽然在dom tree上不可见，但是在layout tree上是可见的。</p>
+</li>
+<li><p>绘制各元素</p>
+<p>即使知道了不同元素的位置及样式信息，我们还需要知道不同元素的绘制先后顺序才能正确绘制出整个页面。在绘制阶段，主线程会遍历layout tree以创建绘制记录。绘制记录可以看做是记录各元素绘制先后顺序的笔记。</p>
+</li>
+<li><p>合成帧</p>
+<p>复合（compositing）是一种分割页面为不同的图层，并单独栅格化，随后组合为帧的技术。不同层的组合由合成器线程完成。</p>
+<p>主线程会遍历layout tree来创建layer tree，添加了will-change CSS属性的元素，会被看做单独的一层。</p>
+<p>一旦layer tree被创建，渲染顺序被确定，主线程会把这些信息传递给合成器线程，合成器线程会栅格化每一层。有的层的可以达到整个页面的大小，因此合成器线程将它们分成多个图块，并将每个图块发送给栅格线程，栅格线程会栅格化每一个并存储在GPU显存中。</p>
+<p><img src="https://ae01.alicdn.com/kf/U9f8a9d38dd6e414e9733dbc591a0cad7f.jpg"></p>
+<p>一旦磁贴被光栅化，合成器线程会收集称为“drow quards”的图块信息以创建合成帧。</p>
+<p>合成帧随后会通过IPC消息传递给浏览器进程，由于浏览器的UI改变或者其它拓展的渲染进程也可以添加合成帧，这些合成帧会被传递给GPU用以展示在屏幕上，如果滚动发生，合成器线程会创建另一个合成帧发送给GPU。</p>
+<p><img src="https://ae01.alicdn.com/kf/U7a357d789bbe4db282a07e38b3269c590.jpg"></p>
+</li>
+</ol>
+<p><strong>重排</strong>：当改变元素尺寸位置属性时，会重新进行样式计算，布局和绘制<br><strong>重绘</strong>：当改变元素颜色属性时，只会发生样式计算和绘制<br>如果在运行动画时，还有大量的js任务需要执行，因为布局绘制和js的执行都是在主线程运行的，当在一帧的时间内，布局和绘制结束后，还有剩余时间，js就会拿到主线程的使用权，如果js执行时间过长就会导致在下一帧开始时，js没有及时归还主线程，导致下一帧动画没有按时渲染，就会出现页面动画的卡顿。我们可以使用俩种方法优化该问题。</p>
+<ol>
+<li>使用requestAnimationFrame这个API来帮助我们解决这个问题，该方法会在每一帧被调用，通过这个方法的回调参数，我们可以知道每一帧当前还剩余的时间，在时间用完前，让js归还主线程。</li>
+<li>使用css中的transform属性，通过该属性实现的动画，不会经过布局和绘制，而是直接运行在合成器线程和栅格线程中，所以不会受到主线程中js执行的影响。更重要的是 transform的动画，由于不需要经过布局绘制样式计算，所以节省了很多运算时间。</li>
+</ol>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>浏览器通过对不同事件的处理来满足各种交互需求。在浏览器的看来用户的所有手势都是输入，鼠标滚动，悬置，点击等等都是事件。</p>
+<p>事件发生时，浏览器进程会发送事件类型及相应的坐标给渲染进程，渲染进程随后找到事件对象并执行所有绑定在其上的相关事件处理函数。</p>
+<p><img src="https://ae01.alicdn.com/kf/Ucf4a42cc097a4f57b8ebd64e00c163a0W.jpg"></p>
+<p>如果页面中没有绑定相关事件，合成器线程可以独立于主线程创建合成帧平滑的处理滚动。如果页面绑定了滚动事件处理器，当页面合成时，合成器线程会标记页面中绑定有事件处理器的区域为非快速滚动区域（non-fast scrollable region），如果存在这个标注，合成器线程会把发生在此处的事件发送给主线程，如果事件不是发生在这些区域，合成器线程则会直接合成新的帧而不用等到主线程的响应。</p>
+<p><img src="https://ae01.alicdn.com/kf/U57f4f5da0c634feab8c7e0d29a8df8c5C.jpg"></p>
+<p>web开发中常用的事件处理模式是事件委托，基于事件冒泡，常常在最顶层绑定事件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">&#x27;touchstart&#x27;</span>, </span><br><span class="line">event =&gt; &#123;</span><br><span class="line"> <span class="keyword">if</span> (event.target === area) &#123;</span><br><span class="line"> event.preventDefault();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>但是这样整个页面都成了non-fast scrollable region，这意味着即使操作的是页面无绑定事件处理器的区域，每次输入时，合成器线程也需要和主线程通信并等待反馈，流畅的合成器独立处理合成帧的模式就失效了。</p>
+<p><img src="https://ae01.alicdn.com/kf/U34b6b8c7c535431fb3eef28c5ecb4bc6W.jpg"></p>
+<p>为了防止这种情况，可以为事件处理器传递passive: true做为参数，这样写就能让浏览器即监听相关事件，又让合成器线程在等主线程响应前构建新的组合帧。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">&#x27;touchstart&#x27;</span>, </span><br><span class="line">event =&gt; &#123;</span><br><span class="line"> <span class="keyword">if</span> (event.target === area) &#123;</span><br><span class="line"> event.preventDefault()</span><br><span class="line"> &#125;</span><br><span class="line">&#125;, &#123;<span class="attr">passive</span>: <span class="literal">true</span>&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>不过上述写法可能又会带来另外一个问题，假设某个区域你只想要水平滚动，使用passive: true可以实现平滑滚动，但是垂直方向的滚动可能会先于event.preventDefault()发生，此时可以通过event.cancelable来防止这种情况。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">&#x27;pointermove&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="keyword">if</span> (event.cancelable) &#123;</span><br><span class="line"> event.preventDefault(); <span class="comment">// block the native scroll</span></span><br><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment"> * do what you want the application to do here</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> &#125; </span><br><span class="line">&#125;, &#123;<span class="attr">passive</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用css属性touch-action来完全消除事件处理器的影响，如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#area</span> &#123; </span><br><span class="line"> <span class="attribute">touch-action</span>: pan-x; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查找到事件对象</strong></p>
+<p>当合成器线程发送输入事件给主线程时，主线程首先会进行命中测试（hit test）来查找对应的事件目标，命中测试会基于渲染过程中生成的绘制记录（paint records）查找事件发生坐标下存在的元素。</p>
+<p><img src="https://ae01.alicdn.com/kf/U46e15d3968894f44a794eeddb7280201l.jpg" alt=" "></p>
+<p><strong>事件的优化</strong></p>
+<p>一般屏幕的刷新速率为60fps，但是某些事件的触发量会不止这个值，出于优化的目的，Chrome 会合并连续的事件 (如wheel,mousewheel,mousemove,pointermove,touchmove)，并延迟到下一帧渲染时候执行。</p>
+<p>而如keydown,keyup,mouseup,mousedown,touchstart和touchend等非连续性事件则会立即被触发。</p>
+<p><img src="https://ae01.alicdn.com/kf/U02cafd088b2246ca8c819922af24aa8d3.jpg"></p>
+<p>合并事件虽然能提示性能，但是如果你的应用是绘画等，则很难绘制一条平滑的曲线了，此时可以使用getCoalescedEvents API来获取组合的事件。示例代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;pointermove&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="keyword">const</span> events = event.getCoalescedEvents();</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">let</span> event <span class="keyword">of</span> events) &#123;</span><br><span class="line"> <span class="keyword">const</span> x = event.pageX;</span><br><span class="line"> <span class="keyword">const</span> y = event.pageY;</span><br><span class="line"> <span class="comment">// draw a line using x and y coordinates.</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ae01.alicdn.com/kf/Ued062288b36f42f3b3e4e4385e0c1c5f9.jpg"></p>
+<p>文章主要参照:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2018/09/inside-browser-part1">https://developers.google.cn/web/updates/2018/09/inside-browser-part1</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2018/09/inside-browser-part2">https://developers.google.cn/web/updates/2018/09/inside-browser-part2</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2018/09/inside-browser-part3">https://developers.google.cn/web/updates/2018/09/inside-browser-part3</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.cn/web/updates/2018/09/inside-browser-part4">https://developers.google.cn/web/updates/2018/09/inside-browser-part4</a></li>
+</ul>
+<p>以及一些网上资料</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <section id="comment">
+            <div id="valine_container" class="valine_thread"></div>
+        </section>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/tags/">Tag</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">浏览器的构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8"><span class="toc-number">2.</span> <span class="toc-text">浏览器内核</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome"><span class="toc-number">3.</span> <span class="toc-text">Chrome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA"><span class="toc-number">3.2.</span> <span class="toc-text">导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93"><span class="toc-number">3.3.</span> <span class="toc-text">渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">事件</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sixmango.github.io/2020/12/02/browser/"><i class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://sixmango.github.io/2020/12/02/browser/&text=浏览器知识随笔"><i class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=浏览器知识随笔&body=Check out this article: https://sixmango.github.io/2020/12/02/browser/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-top">
+    
+    
+    <i class="fas fa-palette"></i> cactus&nbsp&nbsp
+    <i class="fas fa-feather-alt"></i> mango&nbsp&nbsp
+    <i class="fas fa-copyright"></i> 2020
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+<script type="text/javascript">
+  $(function () {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function (trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str, it) => str + it
+          .innerText + '\n', '')
+      }
+    });
+    clip.on('success', function (e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+</script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- valine comments -->
+
+<script src='//unpkg.com/valine@1.4.14/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#valine_container',
+    appId: 'BTQaUfQacLshJFVyJ7Fhq4TJ-gzGzoHsz',
+    appKey: 'TfOuzWb1I4K5P8pqbDVKBx5s',
+    placeholder: "昵称可以输入QQ哦ヾﾉ≧∀≦)o ~",
+    pageSize: '10',
+    avatar: 'monsterid',
+    lang: 'zh-cn',
+    enableQQ: 'true'
+  })
+</script>
+
+<!-- busuanzi -->
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150,"hOffset":-10,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.85},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
