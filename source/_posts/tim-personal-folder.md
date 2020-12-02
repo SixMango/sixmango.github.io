@@ -5,7 +5,7 @@ date: 2020-11-15 14:13:44
 tags:
 - tim
 categories: 
-- live
+- 生活
 ---
 
 QQ轻聊版、TIM版有个BUG：
