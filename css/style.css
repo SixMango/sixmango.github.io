@@ -400,6 +400,8 @@ body ul,
 body ol,
 body dl {
   line-height: 1.725;
+  margin: 0.5rem 0;
+  padding-left: 20px;
 }
 body ul ul,
 body ol ul,
@@ -510,6 +512,7 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  margin: 0.5rem 0;
 }
 .content code {
   hyphens: manual;
@@ -1174,23 +1177,13 @@ article .content .video-container embed {
   height: 100%;
 }
 article .content blockquote {
-  margin: 1rem 10px;
+  margin: 0.5rem 0;
   padding: 0.5em 10px;
-  background: inherit;
-  color: #2bbc8a;
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
+  border-left: 5px solid #e6e6e6;
+  background-color: #fafafa;
 }
 article .content blockquote p {
   margin: 0;
-}
-article .content blockquote:before {
-  margin-right: 0.25em;
-  color: #2bbc8a;
-  content: "\201C";
-  vertical-align: -0.4em;
-  font-size: 2em;
-  line-height: 0.1em;
 }
 article .content blockquote footer {
   margin: line-height 0;
@@ -1283,7 +1276,7 @@ article .content .caption {
   }
 }
 .blog-post-comments {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .blog-post-comments .valine_thread .vwrap .vinput {
   font-size: 14px;
@@ -1622,8 +1615,8 @@ code {
 }
 .highlight {
   overflow-x: auto;
-  margin: 1rem 0;
-  padding: 10px 15px;
+  margin: 0.5rem 0;
+  padding: 10px 8px;
   border-radius: 4px;
   background: #fafafa;
   font-family: 'Fira Code', sans-serif, monospace;

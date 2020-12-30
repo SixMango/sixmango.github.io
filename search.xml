@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>关于前端缓存优化</title>
+      <link href="2020/12/30/cache-optimization/"/>
+      <url>2020/12/30/cache-optimization/</url>
+      
+        <content type="html"><![CDATA[<p>在浏览器通过DNS域名解析获取到IP地址后，在发送请求时会先进行缓存检测。</p><blockquote><p>缓存位置：</p><ul><li>Memory Cache：内存缓存</li><li>Disk Cache：硬盘缓存</li></ul></blockquote><p>打开网页：查找disk cache中是否有匹配，有则使用</p><p>普通刷新(F5)：网页没有关闭，优先使用memory cache，其次使用disk cache</p><p>强制刷新(Ctrl + F5)：不使用缓存，请求头设置Cache-control:no-cache</p><h2 id="强缓存-Expires-Cache-Control"><a href="#强缓存-Expires-Cache-Control" class="headerlink" title="强缓存 Expires / Cache-Control"></a>强缓存 Expires / Cache-Control</h2><p>浏览器对于强缓存的处理，根据第一次请求资源时返回的响应头来确定的</p><ul><li>Expires：缓存过期时间,用来指定资源到期的时间(HTTP/1.0)</li><li>Cache-Control：cache-control:max-age=2592000第一次拿到资源后的259200秒内(30天),再次发送请求,读取缓存中的信息(HTTP/1.1)</li><li>两者同时存在的话, Cache-Control优先级高于Expires</li></ul><blockquote><p>HTML页面一般不做强缓存，以便获取的html数据最新</p></blockquote><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>如果服务器文件更新了，但本地存在强缓存，这种情况是拿不到最新内容的，可以通过以下方法解决</p><p>1）服务器更新资源后，让资源名称和之前不一样，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">index. dads 3232. js</span><br><span class="line">index. fsdfsddvd js</span><br></pre></td></tr></table></figure><p>可以使用webpack打包工具中设置hash name</p><p>2）当文件更新后,我们在htm倒入的时候,设置个后缀(时间戳)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;index. js?a&#x3D;312312321&quot;&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;index js?a&#x3D;898989888&quot;&gt;</span><br></pre></td></tr></table></figure><p>3）使用协商缓存</p><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>强缓存要比协商缓存性能高（不必总是向服务器发请求）</p><h2 id="协商缓存-Last-Modified-ETag"><a href="#协商缓存-Last-Modified-ETag" class="headerlink" title="协商缓存 Last-Modified / ETag"></a>协商缓存 Last-Modified / ETag</h2><p>协商缓存在强缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否需要更新</p><ul><li>Last-Modified：资源文件最后更新的时间(HTTP/1.0)</li><li>ETag：记录资源的一个标识，每一次资源更新都会重新生成一个Etag(HTTP/1.1)</li><li>两者同时存在的话, ETag优先级高于Last-Modified</li></ul><p>浏览器将信息和标识缓存到本地，再次发起请求时在请求头中携带</p><p>If-Modifhed-Since：Last-Modified</p><p>If-None-Match：ETag</p><p><strong>强缓存和协商缓存主要用作静态资源文件，一般不经常更新</strong></p><h2 id="数据缓存"><a href="#数据缓存" class="headerlink" title="数据缓存"></a>数据缓存</h2><p>使用sessionStorage/localStorage或者vuex/redux等，将通过Ajax获取到的数据进行存储。</p><h2 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h2><p>在做DNS解析时会先查找本地是否有缓存。</p><blockquote><p>每一次DNS解析时间预计在20~120毫秒</p><ul><li>减少DNS请求次数</li><li>DNS预获取( DNS Prefetch)</li></ul></blockquote><p>由于要保持高可用，高并发。提供不同数据的服务会部署在不同的服务器上，所以也会导致DNS解析消耗的时间增加，这种情况可以使用DNS预获取。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;dns-prefetch&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//static.36obuyimg.com&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;dns-prefetch&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//d3.cn&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;dns-prefetch&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//djd.com&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cache </tag>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS实现0.5px边框</title>
       <link href="2020/12/16/border0-5px/"/>
       <url>2020/12/16/border0-5px/</url>
